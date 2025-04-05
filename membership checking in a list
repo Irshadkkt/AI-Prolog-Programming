@@ -1,0 +1,13 @@
+memb :-
+    write('Enter a list: '),
+    read(L),
+    write('Enter an element to check: '),
+    read(X),
+    (   memb(X, L)
+    ->  write(X), write(' is a member of '), write(L)
+    ;   write(X), write(' is not a member of '), write(L)
+    ).
+
+memb(X, [X|_]).
+memb(X, [_|T]) :-
+    memb(X, T).
