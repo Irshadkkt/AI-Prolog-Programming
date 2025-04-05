@@ -1,0 +1,16 @@
+merge_lists :-
+    write('Enter the first ordered list: '),
+    read(L1),
+    write('Enter the second ordered list: '),
+    read(L2),
+    merge(L1, L2, Merged),
+    write('The merged list is: '), write(Merged), nl.
+
+merge([], L, L).
+merge(L, [], L).
+merge([H1|T1], [H2|T2], [H1|Merged]) :-
+    H1 =< H2,
+    merge(T1, [H2|T2], Merged).
+merge([H1|T1], [H2|T2], [H2|Merged]) :-
+    H1 > H2,
+    merge([H1|T1], T2, Merged).
