@@ -1,0 +1,11 @@
+conc :-
+    write('Enter the first list: '),
+    read(L1),
+    write('Enter the second list: '),
+    read(L2),
+    concatenate(L1, L2, L3),
+    write('The concatenated list is: '), write(L3).
+
+concatenate([], L, L).
+concatenate([X|L1], L2, [X|L3]) :-
+    concatenate(L1, L2, L3).
