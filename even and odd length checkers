@@ -1,0 +1,23 @@
+evenlength :-
+    write('Enter a list: '),
+    read(List),
+    (   evenlength(List)
+    ->  write('The list has even length.')
+    ;   write('The list does not have even length.')
+    ).
+
+oddlength :-
+    write('Enter a list: '),
+    read(List),
+    (   oddlength(List)
+    ->  write('The list has odd length.')
+    ;   write('The list does not have odd length.')
+    ).
+
+evenlength([]) :- !.
+evenlength([,|T]) :-
+    evenlength(T).
+
+oddlength([_]) :- !.
+oddlength([,|T]) :-
+    oddlength(T).
