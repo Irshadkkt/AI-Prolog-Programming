@@ -1,0 +1,15 @@
+max_list :-
+    write('Enter a list: '),
+    read(L),
+    (   max_list(L, M)
+    ->  write('The maximum number in the list is: '), write(M)
+    ;   write('The list is empty.')
+    ).
+
+max_list([X], X) :- !.
+max_list([H|T], M) :-
+    max_list(T, MT),
+    (   H > MT
+    ->  M = H
+    ;   M = MT
+    ).
