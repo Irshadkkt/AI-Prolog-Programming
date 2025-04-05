@@ -1,0 +1,11 @@
+reverse_list :-
+    write('Enter a list: '),
+    read(L),
+    reverse(L, R),
+    write('Original list: '), write(L), nl,
+    write('Reversed list: '), write(R).
+
+reverse([], []).
+reverse([H|T], R) :-
+    reverse(T, RT),
+    append(RT, [H], R).
