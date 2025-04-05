@@ -1,0 +1,10 @@
+sumlist :-
+    write('Enter a list: '),
+    read(L),
+    sumlist(L, S),
+    write('The sum of the list is: '), write(S).
+
+sumlist([], 0) :- !.
+sumlist([H|T], S) :-
+    sumlist(T, ST),
+    S is H + ST.
