@@ -1,0 +1,15 @@
+palindrome :-
+    write('Enter a list: '),
+    read(L),
+    (   is_palindrome(L)
+    ->  write('The list is a palindrome.')
+    ;   write('The list is not a palindrome.')
+    ).
+
+is_palindrome(L) :-
+    reverse(L, L).
+
+reverse([], []).
+reverse([H|T], R) :-
+    reverse(T, RT),
+    append(RT, [H], R).
