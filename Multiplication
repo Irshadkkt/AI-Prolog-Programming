@@ -1,0 +1,10 @@
+multi :-
+    write('Enter the first number: '),
+    read(N1),
+    write('Enter the second number: '),
+    read(N2),
+    calculate_multi(N1, N2, R),
+    write('The result of '), write(N1), write(' multiplied by '), write(N2), write(' is '), write(R).
+
+calculate_multi(N1, N2, R) :-
+    R is N1 * N2.
