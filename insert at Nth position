@@ -1,0 +1,15 @@
+insert_nth :-
+    write('Enter the item to insert: '),
+    read(I),
+    write('Enter the position: '),
+    read(N),
+    write('Enter the list: '),
+    read(L),
+    insert_nth(I, N, L, R),
+    write('The modified list is: '), write(R).
+
+insert_nth(I, 1, L, [I|L]) :- !.
+insert_nth(I, N, [H|T], [H|R]) :-
+    N > 1,
+    N1 is N - 1,
+    insert_nth(I, N1, T, R).
