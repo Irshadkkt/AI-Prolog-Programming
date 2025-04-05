@@ -1,0 +1,14 @@
+power :-
+    write('Enter the base number: '),
+    read(Num),
+    write('Enter the exponent: '),
+    read(Pow),
+    calculate_power(Num, Pow, Ans),
+    write('The result of '), write(Num), write(' raised to the power of '), write(Pow), write(' is '), write(Ans).
+
+calculate_power(_, 0, 1) :- !.
+calculate_power(Num, Pow, Ans) :-
+    Pow > 0,
+    Pow1 is Pow - 1,
+    calculate_power(Num, Pow1, Temp),
+    Ans is Num * Temp.
