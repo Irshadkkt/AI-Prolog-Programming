@@ -1,0 +1,15 @@
+nth_element :-
+    write('Enter a list: '),
+    read(L),
+    write('Enter the position: '),
+    read(N),
+    (   nth_element(N, L, X)
+    ->  write('The element at position '), write(N), write(' is '), write(X)
+    ;   write('Invalid position or list is too short.')
+    ).
+
+nth_element(1, [X|_], X) :- !.
+nth_element(N, [_|T], X) :-
+    N > 1,
+    N1 is N - 1,
+    nth_element(N1, T, X).
