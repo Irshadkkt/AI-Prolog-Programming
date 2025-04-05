@@ -1,0 +1,12 @@
+max(X, Y, M) :-
+    (X >= Y -> M = X ; M = Y).
+
+main :-
+    write('Enter the first number: '),
+    read(X),
+    write('Enter the second number: '),
+    read(Y),
+    max(X, Y, Result),
+    write('The maximum of '), write(X), write(' and '), write(Y), write(' is '), write(Result).
+
+:- initialization(main, main).
